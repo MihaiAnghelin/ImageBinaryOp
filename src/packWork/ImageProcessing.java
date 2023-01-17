@@ -2,13 +2,9 @@ package packWork;
 
 import java.awt.image.BufferedImage;
 
-public class ImageProcessing {
-    private final BufferedImage image1;
-    private final BufferedImage image2;
+public class ImageProcessing extends BmpImage {
 
-    public ImageProcessing(BufferedImage image1, BufferedImage image2) {
-        this.image1 = image1;
-        this.image2 = image2;
+    public ImageProcessing() {
     }
 
     enum Operation {
@@ -38,7 +34,7 @@ public class ImageProcessing {
         }
     }
 
-    private BufferedImage makeOperation(Operation operation) {
+   /* private BufferedImage makeOperation(Operation operation) {
         int width = Math.min(image1.getWidth(), image2.getWidth());
         int height = Math.min(image1.getHeight(), image2.getHeight());
 
@@ -54,18 +50,6 @@ public class ImageProcessing {
         }
 
         return result;
-    }
-
-    public BufferedImage getAndOperation() {
-        return makeOperation(Operation.AND);
-    }
-
-    public BufferedImage getOrOperation() {
-        return makeOperation(Operation.OR);
-    }
-
-    public BufferedImage getXorOperation() {
-        return makeOperation(Operation.XOR);
-    }
+    }*/
 
 }

@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e231414-e8ec-438c-9cd6-8fe8ac7dcb61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/packTest/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/packWork/ImageRW.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/2.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/images/2.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/3.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/4.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/and.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/or.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/xor.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packTest/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packTest/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packWork/ImageProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packWork/ImageProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packWork/ImageRW.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +46,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/mihui/Dev/ImageBinaryOp/images",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "/home/mihui/Dev/ImageBinaryOp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -49,6 +55,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -70,10 +77,45 @@
       <updated>1673190402475</updated>
       <workItem from="1673190403549" duration="774000" />
       <workItem from="1673192831801" duration="7893000" />
+      <workItem from="1673275325544" duration="11694000" />
+      <workItem from="1673968094238" duration="20536000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="9" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/packWork/Consumer.java</url>
+          <line>16</line>
+          <properties class="packWork.Consumer" method="run">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="javascript-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

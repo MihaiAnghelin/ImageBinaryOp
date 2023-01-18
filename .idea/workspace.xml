@@ -6,16 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="5e231414-e8ec-438c-9cd6-8fe8ac7dcb61" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/2.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/images/2.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/3.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/4.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/and.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/or.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/xor.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/output1.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/output2.bmp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packTest/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packTest/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packWork/BmpImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packWork/BmpImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packWork/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packWork/Consumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packWork/ImageProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packWork/ImageProcessing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packWork/ImageRW.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packWork/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packWork/Producer.java" afterDir="false" />
     </list>
+    <list id="9ddebb99-693d-4d40-a33d-9b81c74d543e" name="Changes by Andu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +77,7 @@
       <workItem from="1673190403549" duration="774000" />
       <workItem from="1673192831801" duration="7893000" />
       <workItem from="1673275325544" duration="11694000" />
-      <workItem from="1673968094238" duration="20536000" />
+      <workItem from="1673968094238" duration="31295000" />
     </task>
     <servers />
   </component>
@@ -103,14 +102,28 @@
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="9" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="21" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/packWork/ImageProcessing.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/packWork/ImageProcessing.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/packWork/Consumer.java</url>
-          <line>16</line>
-          <properties class="packWork.Consumer" method="run">
+          <url>file://$PROJECT_DIR$/src/packWork/ImageProcessing.java</url>
+          <line>34</line>
+          <properties class="packWork.ImageProcessing" method="makeOperation">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

@@ -35,10 +35,23 @@ public class Producer implements Runnable {
 
                 System.out.println("Producatorul a pus:\t" + (i + 1) + "/" + 4 + " din " + fileName);
                 try {
-                    sleep(1000);
+                    sleep(100);
                 } catch (InterruptedException ignored) {
                 }
             }
+
+            int bufferRest = (int) randomAccessFile.length() % 4;
+            if (bufferRest != 0) {
+                byte[] byteBuffer = new byte[bufferRest];
+
+                randomAccessFile.readFully(byteBuffer);
+
+                buffer.put(byteBuffer);
+
+                System.out.println("Producatorul a pus restul de biti %4 din " + fileName);
+            }
+
+            randomAccessFile.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

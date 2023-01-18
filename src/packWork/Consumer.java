@@ -16,11 +16,16 @@ public class Consumer extends ImageProcessing implements Runnable {
 
     public void run() {
         imageBuffer1 = addToImageBuffer(imageBuffer1);
-        writeImageToPath("images/output1.bmp", imageBuffer1);
-
         imageBuffer2 = addToImageBuffer(imageBuffer2);
-        writeImageToPath("images/output2.bmp", imageBuffer2);
 
+        byte[] imageBufferAnd = processImages(imageBuffer1, imageBuffer2, Operation.AND);
+        writeImageToPath("images/outputAnd.bmp", imageBufferAnd);
+
+        byte[] imageBufferOr = processImages(imageBuffer1, imageBuffer2, Operation.OR);
+        writeImageToPath("images/outputOr.bmp", imageBufferOr);
+
+        byte[] imageBufferXor = processImages(imageBuffer1, imageBuffer2, Operation.XOR);
+        writeImageToPath("images/outputXor.bmp", imageBufferXor);
     }
 
     private byte[] addToImageBuffer(byte[] imageBuffer) {
@@ -33,6 +38,16 @@ public class Consumer extends ImageProcessing implements Runnable {
             System.arraycopy(bytes, 0, imageBuffer, oldLength, bytes.length);
 
             System.out.println("Consumatorul a luat:\t" + (i + 1) + " din " + 4);
+        }
+
+        byte[] bytes = buffer.get();
+        if (bytes.length != 0) {
+            int oldLength = imageBuffer.length;
+
+            imageBuffer = Arrays.copyOf(imageBuffer, oldLength + bytes.length);
+            System.arraycopy(bytes, 0, imageBuffer, oldLength, bytes.length);
+
+            System.out.println("Consumatorul a luat restul de biti %4");
         }
 
         return imageBuffer;

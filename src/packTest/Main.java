@@ -2,10 +2,8 @@ package packTest;
 
 import packWork.*;
 
-import java.io.*;
-
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Buffer buffer = new Buffer();
         Thread producer = new Thread(new Producer(buffer, "images/1.bmp", "images/2.bmp"));
         Thread consumer = new Thread(new Consumer(buffer));

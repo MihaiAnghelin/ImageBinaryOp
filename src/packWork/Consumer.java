@@ -1,5 +1,6 @@
 package packWork;
 
+import java.awt.image.BufferedImage;
 import java.util.Arrays;
 
 public class Consumer extends ImageProcessing implements Runnable {
@@ -18,14 +19,14 @@ public class Consumer extends ImageProcessing implements Runnable {
         imageBuffer1 = addToImageBuffer(imageBuffer1);
         imageBuffer2 = addToImageBuffer(imageBuffer2);
 
-        byte[] imageBufferAnd = processImages(imageBuffer1, imageBuffer2, Operation.AND);
-        writeImageToPath("images/outputAnd.bmp", imageBufferAnd);
+        BufferedImage imageBufferAnd = processImages(imageBuffer1, imageBuffer2, Operation.AND);
+        writeBufferImageToPath(imageBufferAnd, "images/and.bmp");
 
-        byte[] imageBufferOr = processImages(imageBuffer1, imageBuffer2, Operation.OR);
-        writeImageToPath("images/outputOr.bmp", imageBufferOr);
+        BufferedImage imageBufferOr = processImages(imageBuffer1, imageBuffer2, Operation.OR);
+        writeBufferImageToPath(imageBufferOr, "images/or.bmp");
 
-        byte[] imageBufferXor = processImages(imageBuffer1, imageBuffer2, Operation.XOR);
-        writeImageToPath("images/outputXor.bmp", imageBufferXor);
+        BufferedImage imageBufferXor = processImages(imageBuffer1, imageBuffer2, Operation.XOR);
+        writeBufferImageToPath(imageBufferXor, "images/xor.bmp");
     }
 
     private byte[] addToImageBuffer(byte[] imageBuffer) {

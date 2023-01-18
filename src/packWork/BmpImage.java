@@ -1,5 +1,9 @@
 package packWork;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -26,6 +30,24 @@ public class BmpImage {
     protected void writeImageToPath(String filePath, byte[] imageBuffer) {
         try (FileOutputStream fos = new FileOutputStream(filePath)) {
             fos.write(imageBuffer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected BufferedImage getImageFromBytes(byte[] imageBuffer) {
+        try {
+            return ImageIO.read(new ByteArrayInputStream(imageBuffer));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    protected void writeBufferImageToPath(BufferedImage image, String filePath) {
+        try (FileOutputStream fos = new FileOutputStream(filePath)) {
+            ImageIO.write(image, "bmp", fos);
         } catch (IOException e) {
             e.printStackTrace();
         }

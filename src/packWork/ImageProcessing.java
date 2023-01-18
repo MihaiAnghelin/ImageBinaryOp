@@ -1,7 +1,8 @@
 package packWork;
 
-public class ImageProcessing extends BmpImage {
+import java.awt.image.BufferedImage;
 
+public class ImageProcessing extends BmpImage {
     public ImageProcessing() {
     }
 
@@ -12,13 +13,13 @@ public class ImageProcessing extends BmpImage {
     }
 
     private int getNewRGB(int rgb1, int rgb2, Operation operation) {
-        int r1 = getRed(rgb1);
-        int g1 = getGreen(rgb1);
-        int b1 = getBlue(rgb1);
+        int r1 = (rgb1 >> 16) & 0xFF;
+        int g1 = (rgb1 >> 8) & 0xFF;
+        int b1 = rgb1 & 0xFF;
 
-        int r2 = getRed(rgb2);
-        int g2 = getGreen(rgb2);
-        int b2 = getBlue(rgb2);
+        int r2 = (rgb2 >> 16) & 0xFF;
+        int g2 = (rgb2 >> 8) & 0xFF;
+        int b2 = rgb2 & 0xFF;
 
         switch (operation) {
             case AND:
@@ -32,62 +33,25 @@ public class ImageProcessing extends BmpImage {
         }
     }
 
-    private byte[] makeOperation(Operation operation, byte[] imageBuffer1, byte[] imageBuffer2) {
-        int width = Math.min(getWidth(imageBuffer1), getWidth(imageBuffer2));
-        int height = Math.min(getHeight(imageBuffer1), getHeight(imageBuffer2));
+    protected BufferedImage processImages(byte[] imageBuffer1, byte[] imageBuffer2, Operation operation) {
 
-        int offset = 54;
-        int size = width * height * 3 + offset;
-        byte[] imageBuffer = new byte[size];
+        BufferedImage image1 = getImageFromBytes(imageBuffer1);
+        BufferedImage image2 = getImageFromBytes(imageBuffer2);
+
+        int width = Math.min(image1.getWidth(), image2.getWidth());
+        int height = Math.min(image1.getHeight(), image2.getHeight());
+
+        BufferedImage result = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                int rgb1 = getPixel(imageBuffer1, i, j);
-                int rgb2 = getPixel(imageBuffer2, i, j);
-
+                int rgb1 = image1.getRGB(i, j);
+                int rgb2 = image2.getRGB(i, j);
                 int newRGB = getNewRGB(rgb1, rgb2, operation);
-
-                String colorHex1 = getColorHexFromPixel(rgb1);
-                String colorHex2 = getColorHexFromPixel(rgb2);
-                String colorHex = getColorHexFromPixel(newRGB);
-
-                imageBuffer = setPixel(imageBuffer, i, j, newRGB);
+                result.setRGB(i, j, newRGB);
             }
         }
 
-        return imageBuffer;
-    }
-
-    public byte[] processImages(byte[] imageBuffer1, byte[] imageBuffer2, Operation operation) {
-        byte[] header1 = getHeader(imageBuffer1);
-        byte[] header2 = getHeader(imageBuffer2);
-
-        byte[] imageBuffer1WithoutHeader = getImageBufferWithoutHeader(imageBuffer1);
-        byte[] imageBuffer2WithoutHeader = getImageBufferWithoutHeader(imageBuffer2);
-
-        int minLength = Math.min(imageBuffer1WithoutHeader.length, imageBuffer2WithoutHeader.length);
-
-        int minWidth = Math.min(getWidth(imageBuffer1), getWidth(imageBuffer2));
-        int minHeight = Math.min(getHeight(imageBuffer1), getHeight(imageBuffer2));
-
-        byte[] result = new byte[minLength];
-        byte[] header = minLength == imageBuffer1WithoutHeader.length ? header1 : header2;
-
-        header = setWidth(header, minWidth);
-        header = setHeight(header, minHeight);
-
-        switch (operation) {
-            case AND:
-                result = makeOperation(Operation.AND, imageBuffer1, imageBuffer2);
-                break;
-            case OR:
-                result = makeOperation(Operation.OR, imageBuffer1, imageBuffer2);
-                break;
-            case XOR:
-                result = makeOperation(Operation.XOR, imageBuffer1, imageBuffer2);
-                break;
-        }
-
-        return getImageBufferWithHeader(result, header);
+        return result;
     }
 }

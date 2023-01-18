@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e231414-e8ec-438c-9cd6-8fe8ac7dcb61" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/packWork/GlobalTimer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/and.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/or.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/out.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/outputAnd.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/outputOr.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/outputXor.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/test1.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/test2.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/xor.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packTest/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packTest/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packWork/BmpImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packWork/BmpImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packWork/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packWork/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packWork/Buffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packTest/Buffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packWork/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packTest/Consumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packWork/ImageProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packWork/ImageProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packWork/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packTest/Producer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +31,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -73,6 +87,9 @@
       <workItem from="1673192831801" duration="7893000" />
       <workItem from="1673275325544" duration="11694000" />
       <workItem from="1673968094238" duration="31295000" />
+      <workItem from="1674053002552" duration="1365000" />
+      <workItem from="1674056254794" duration="892000" />
+      <workItem from="1674057335686" duration="5536000" />
     </task>
     <servers />
   </component>
